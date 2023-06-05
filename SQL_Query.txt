@@ -1,0 +1,7 @@
+SELECT d.name, AVG(s.amt) AS average_salary
+FROM departments d
+JOIN employees e ON d.id = e.dept_id
+JOIN salaries s ON e.id = s.emp_id 
+GROUP BY d.name
+ORDER BY average_salary DESC
+LIMIT 3;
